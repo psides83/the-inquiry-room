@@ -40,7 +40,7 @@ export const paths = {
     courses: "/e-learning/courses",
     course: `/e-learning/course`,
     posts: "/e-learning/posts",
-    post: `/e-learning/post`,
+    episode: `/e-learning/episode`,
     about: "/e-learning/about",
     contact: "/e-learning/contact",
   },

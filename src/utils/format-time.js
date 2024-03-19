@@ -1,27 +1,32 @@
-import { format, getTime, formatDistanceToNow } from 'date-fns';
+import { format, getTime, formatDistanceToNow } from "date-fns";
 
 // ----------------------------------------------------------------------
 
-export function fDate(date, newFormat) {
-  const fm = newFormat || 'dd MMM yyyy';
+export function fDate(dateString, newFormat) {
+  const fm = newFormat || "dd MMM yyyy";
 
-  return date ? format(new Date(date), fm) : '';
+  // Convert the dateString to a Date object
+  const date = dateString ? new Date(dateString) : null;
+
+  const newDate = date ? format(new Date(date), fm) : "";
+
+  return newDate;
 }
 
 export function fTime(date, newFormat) {
-  const fm = newFormat || 'p';
+  const fm = newFormat || "p";
 
-  return date ? format(new Date(date), fm) : '';
+  return date ? format(new Date(date), fm) : "";
 }
 
 export function fDateTime(date, newFormat) {
-  const fm = newFormat || 'dd MMM yyyy p';
+  const fm = newFormat || "dd MMM yyyy p";
 
-  return date ? format(new Date(date), fm) : '';
+  return date ? format(new Date(date), fm) : "";
 }
 
 export function fTimestamp(date) {
-  return date ? getTime(new Date(date)) : '';
+  return date ? getTime(new Date(date)) : "";
 }
 
 export function fToNow(date) {
@@ -29,7 +34,7 @@ export function fToNow(date) {
     ? formatDistanceToNow(new Date(date), {
         addSuffix: true,
       })
-    : '';
+    : "";
 }
 
 export function isBetween(inputDate, startDate, endDate) {
@@ -44,7 +49,9 @@ export function isBetween(inputDate, startDate, endDate) {
 
 export function isAfter(startDate, endDate) {
   const results =
-    startDate && endDate ? new Date(startDate).getTime() > new Date(endDate).getTime() : false;
+    startDate && endDate
+      ? new Date(startDate).getTime() > new Date(endDate).getTime()
+      : false;
 
   return results;
 }

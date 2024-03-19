@@ -48,10 +48,10 @@ export default function ElearningFeaturedPost({ episode }) {
               maxWidth: { md: 408 },
             }}
           >
-            {/* <PostTimeBlock
-              // createdAt={fDate(episode.pubDate)}
-              duration={episode.duration}
-            /> */}
+            <PostTimeBlock
+              createdAt={fDate(episode?.pubDate)}
+              duration={episode?.duration}
+            />
 
             <Link
               // component={RouterLink}
@@ -62,9 +62,10 @@ export default function ElearningFeaturedPost({ episode }) {
               {episode?.title}
             </Link>
 
-            <Typography sx={{ color: "text.secondary", flexGrow: 1 }}>
-              {episode?.description}
-            </Typography>
+            <Typography
+              sx={{ color: "text.secondary", flexGrow: 1 }}
+              dangerouslySetInnerHTML={{ __html: episode?.description }}
+            />
 
             <Stack
               direction="row"

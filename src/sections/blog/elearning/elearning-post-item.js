@@ -24,11 +24,13 @@ export default function ElearningPostItem({ episode }) {
 
       <Stack direction="row" spacing={3} sx={{ p: 3 }}>
         <Stack sx={{ textAlign: "center" }}>
-          {/* <Typography variant="subtitle2">{fDate(episode.createdAt, 'MMM')}</Typography> */}
+          <Typography variant="subtitle2">
+            {fDate(episode.pubDate, "MMM")}
+          </Typography>
 
           <Divider sx={{ mt: 1, mb: 0.5 }} />
 
-          {/* <Typography variant="h3">{fDate(episode.createdAt, 'dd')}</Typography> */}
+          <Typography variant="h3">{fDate(episode.pubDate, "dd")}</Typography>
         </Stack>
 
         <Stack spacing={1}>
@@ -42,9 +44,13 @@ export default function ElearningPostItem({ episode }) {
             </TextMaxLine>
           </Link>
 
-          <TextMaxLine variant="body2" persistent color="text.secondary">
-            {episode.description}
-          </TextMaxLine>
+          <TextMaxLine
+            variant="body2"
+            // persistent
+            color="text.secondary"
+            sx={{ mt: -3 }}
+            dangerouslySetInnerHTML={{ __html: episode.description }}
+          />
 
           <Stack
             spacing={1.5}

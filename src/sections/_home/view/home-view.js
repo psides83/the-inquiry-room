@@ -16,6 +16,7 @@ import PricingHome from "../../pricing/home/pricing-home";
 import HomeFeatureHighlights from "../home-feature-highlights";
 import HomeFlexibleComponents from "../home-flexible-components";
 import { Box } from "@mui/material";
+import ElearningPostsView from "src/sections/_elearning/view/elearning-posts-view";
 
 // ----------------------------------------------------------------------
 
@@ -26,23 +27,25 @@ export default function HomeView() {
     <>
       <ScrollProgress scrollYProgress={scrollYProgress} />
 
-      <HomeHero />
+      <ElearningPostsView />
 
-      <HomeNewStart />
+      {/* <HomeHero /> */}
 
-      <HomeFlexibleComponents />
+      {/* <HomeNewStart /> */}
 
-      <HomeFeatureHighlights />
+      {/* <HomeFlexibleComponents /> */}
 
-      <HomeForDesigner />
+      {/* <HomeFeatureHighlights /> */}
 
-      <PricingHome plans={_pricingHome} />
+      {/* <HomeForDesigner /> */}
 
-      <HomeFAQs />
+      {/* <PricingHome plans={_pricingHome} /> */}
 
-      <HomeCombination />
+      {/* <HomeFAQs /> */}
 
-      <HomeAdvertisement />
+      {/* <HomeCombination /> */}
+
+      {/* <HomeAdvertisement /> */}
     </>
   );
 }

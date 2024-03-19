@@ -31,10 +31,6 @@ export default function ElearningPostsView() {
       >
         <Grid container spacing={{ md: 8 }}>
           <Grid xs={12} md={8}>
-            <Typography>{podcastEpisodes[0]?.title}</Typography>
-            {podcastEpisodes.map((episode) => (
-              <Typography>{episode.title}</Typography>
-            ))}
             <ElearningPosts episodes={podcastEpisodes} />
           </Grid>
 
