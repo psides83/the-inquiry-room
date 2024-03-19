@@ -1,0 +1,8 @@
+{
+  "/not-found": "app/not-found.js",
+  "/components/(index)/page": "app/components/(index)/page.js",
+  "/auth/register-illustration/page": "app/auth/register-illustration/page.js",
+  "/components/markdown/page": "app/components/markdown/page.js",
+  "/(index)/page": "app/(index)/page.js",
+  "/e-learning/posts/page": "app/e-learning/posts/page.js"
+}
