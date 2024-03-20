@@ -14,10 +14,19 @@ import { fDate } from "src/utils/format-time";
 
 import Image from "src/components/image";
 import TextMaxLine from "src/components/text-max-line";
+import { Box, Button, Collapse } from "@mui/material";
+import { useState } from "react";
+import Player, { PlayerDialog } from "src/components/player";
 
 // ----------------------------------------------------------------------
 
 export default function ElearningPostItem({ episode }) {
+  const [showingDescription, setShowingDescription] = useState(false);
+
+  const handleCollapse = () => {
+    if (showingDescription) setShowingDescription(false);
+    else setShowingDescription(true);
+  };
   return (
     <Paper variant="outlined" sx={{ borderRadius: 2, overflow: "hidden" }}>
       <Image src={episode.coverArt} alt={episode.title} ratio="1/1" />
@@ -34,23 +43,56 @@ export default function ElearningPostItem({ episode }) {
         </Stack>
 
         <Stack spacing={1}>
-          <Link
-            // component={RouterLink}
-            // href={paths.eLearning.episode}
-            color="inherit"
-          >
+          <Typography color="inherit">
             <TextMaxLine variant="h6" persistent>
               {episode.title}
             </TextMaxLine>
-          </Link>
+          </Typography>
 
-          <TextMaxLine
-            variant="body2"
-            // persistent
-            color="text.secondary"
-            sx={{ mt: -3 }}
-            dangerouslySetInnerHTML={{ __html: episode.description }}
-          />
+          <Box sx={{ mb: 2 }}>
+            <Player controls url={episode?.enclosure.url} />
+          </Box>
+
+          {/* <Collapse in={!showingDescription}>
+            <Stack alignItems="center">
+              <TextMaxLine
+                variant="body2"
+                // persistent
+                color="text.secondary"
+                sx={{ mt: -3 }}
+                dangerouslySetInnerHTML={{ __html: episode.description }}
+              />
+              <Button
+                onClick={handleCollapse}
+                variant="outlined"
+                size="small"
+                sx={{ mt: 2, justifySelf: "center" }}
+              >
+                Expand
+              </Button>
+            </Stack>
+          </Collapse> */}
+
+          <Collapse in={showingDescription} collapsedSize={90} sx={{ mt: -3 }}>
+            <Stack alignItems="center">
+              <Box
+                variant="body2"
+                // persistent
+                color="text.secondary"
+                // sx={{ mt: -3 }}
+                dangerouslySetInnerHTML={{ __html: episode.description }}
+              />
+            </Stack>
+          </Collapse>
+
+          <Button
+            onClick={handleCollapse}
+            // variant="outlined"
+            size="small"
+            // sx={{ mt: 2, justifySelf: "center" }}
+          >
+            {showingDescription ? "Show less" : "Show more"}
+          </Button>
 
           <Stack
             spacing={1.5}

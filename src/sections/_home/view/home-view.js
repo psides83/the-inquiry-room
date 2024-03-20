@@ -16,7 +16,7 @@ import PricingHome from "../../pricing/home/pricing-home";
 import HomeFeatureHighlights from "../home-feature-highlights";
 import HomeFlexibleComponents from "../home-flexible-components";
 import { Box } from "@mui/material";
-import ElearningPostsView from "src/sections/_elearning/view/elearning-posts-view";
+import ElearningPostsView from "src/sections/_elearning/view/elearning-episodes-view";
 
 // ----------------------------------------------------------------------
 

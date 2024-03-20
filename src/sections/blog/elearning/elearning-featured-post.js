@@ -16,6 +16,7 @@ import Image from "src/components/image";
 
 import PostTimeBlock from "../common/post-time-block";
 import { useEffect } from "react";
+import Player from "src/components/player";
 
 // ----------------------------------------------------------------------
 
@@ -28,7 +29,7 @@ export default function ElearningFeaturedPost({ episode }) {
     <Box
       sx={{
         bgcolor: "background.neutral",
-        py: { xs: 8, md: 10 },
+        py: { xs: 12, md: 14 },
       }}
     >
       <Container>
@@ -53,14 +54,16 @@ export default function ElearningFeaturedPost({ episode }) {
               duration={episode?.duration}
             />
 
-            <Link
+            <Typography
               // component={RouterLink}
               // href={paths.eLearning.episode}
               color="inherit"
               variant="h3"
             >
               {episode?.title}
-            </Link>
+            </Typography>
+
+            <Player controls url={episode?.enclosure.url} />
 
             <Typography
               sx={{ color: "text.secondary", flexGrow: 1 }}

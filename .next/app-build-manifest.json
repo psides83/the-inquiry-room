@@ -1,9 +1,14 @@
 {
   "pages": {
-    "/not-found": [
+    "/(index)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/app/(index)/page.js"
+    ],
+    "/(index)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(index)/layout.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -16,15 +21,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/(index)/page": [
+    "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(index)/page.js"
+      "static/chunks/app/not-found.js"
     ],
-    "/(index)/layout": [
+    "/e-learning/(index)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(index)/layout.js"
+      "static/chunks/app/e-learning/(index)/page.js"
+    ],
+    "/e-learning/(index)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/e-learning/(index)/layout.js"
     ]
   }
 }
