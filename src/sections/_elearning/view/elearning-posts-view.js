@@ -12,11 +12,13 @@ import PostSearchMobile from "../../blog/common/post-search-mobile";
 import ElearningFeaturedPost from "../../blog/elearning/elearning-featured-post";
 import usePodcast from "src/hooks/use-podcast";
 import { Typography } from "@mui/material";
+import { useState } from "react";
 
 // ----------------------------------------------------------------------
 
 export default function ElearningPostsView() {
   const [podcastData, podcastEpisodes, podcastServers] = usePodcast();
+  const [searchTerm, setSearchTerm] = useState();
 
   return (
     <>
@@ -37,7 +39,7 @@ export default function ElearningPostsView() {
           <Grid xs={12} md={4}>
             <PostSidebar
               popularTags={_tags}
-              categories={_categories}
+              // categories={_categories}
               recentPosts={{ list: _coursePosts.slice(-4) }}
               advertisement={{
                 title: "Advertisement",
