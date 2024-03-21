@@ -122,5 +122,5 @@ export const navConfig = [
   //     pageLinks[5],
   //   ],
   // },
-  { title: "Docs", path: paths.docs },
+  // { title: "Docs", path: paths.docs },
 ];
