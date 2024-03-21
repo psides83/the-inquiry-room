@@ -29,6 +29,7 @@ export default function Podcast({ episodes }) {
             xs: "repeat(1, 1fr)",
             sm: "repeat(2, 1fr)",
           },
+          mb: 8,
         }}
       >
         {episodes.slice(0, visibleEpisodes).map((episode) => (
@@ -37,7 +38,7 @@ export default function Podcast({ episodes }) {
       </Box>
 
       {visibleEpisodes < episodes.length && (
-        <Button variant="contained" sx={{ mt: 4 }} onClick={handleShowMore}>
+        <Button variant="contained" onClick={handleShowMore}>
           Show More
         </Button>
       )}

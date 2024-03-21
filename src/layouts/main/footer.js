@@ -171,10 +171,17 @@ export default function Footer() {
               <Stack spacing={2} sx={{ mt: 4 }}>
                 <Typography variant="h6">Social</Typography>
                 <Stack direction="row" alignItems="center">
-                  {_socials.map((social) => (
-                    <IconButton key={social.value} color="primary">
-                      <Iconify icon={social.icon} />
-                    </IconButton>
+                  {socials.map((social) => (
+                    <Link
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener"
+                      underline="none"
+                    >
+                      <IconButton key={social.value} color="primary">
+                        <Iconify icon={social.icon} />
+                      </IconButton>
+                    </Link>
                   ))}
                 </Stack>
               </Stack>
