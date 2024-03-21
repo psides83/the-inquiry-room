@@ -44,26 +44,26 @@ const StyledAppStoreButton = styled(Button)(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 const socials = [
-  {
-    value: "facebook",
-    label: "FaceBook",
-    icon: "carbon:logo-facebook",
-    color: "#1877F2",
-    url: "",
-  },
+  // {
+  //   value: "facebook",
+  //   label: "FaceBook",
+  //   icon: "carbon:logo-facebook",
+  //   color: "#1877F2",
+  //   url: "",
+  // },
   {
     value: "instagram",
     label: "Instagram",
     icon: "carbon:logo-instagram",
     color: "#E02D69",
-    url: "",
+    url: "https://www.instagram.com/theinquiryroom?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
   },
   {
     value: "twitter",
     label: "Twitter",
     icon: "carbon:logo-twitter",
     color: "#00AAEC",
-    url: "",
+    url: "https://twitter.com/TheWayMediaCo",
   },
 ];
 
