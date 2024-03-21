@@ -26,6 +26,7 @@ import Logo from "src/components/logo";
 import Iconify from "src/components/iconify";
 
 import { pageLinks, navConfig } from "./config-navigation";
+import { Box } from "@mui/material";
 
 // ----------------------------------------------------------------------
 
@@ -81,9 +82,9 @@ export default function Footer() {
           py: { xs: 8, md: 10 },
         }}
       >
-        <Grid container spacing={3} justifyContent={{ md: "space-between" }}>
+        <Grid container spacing={3} justifyContent={{ md: "center" }}>
           <Grid xs={12} md={4}>
-            <Stack spacing={{ xs: 3, md: 5 }}>
+            <Stack direction="row" spacing={{ xs: 3, md: 5 }}>
               <Stack alignItems="flex-start" spacing={3}>
                 <Logo sx={{ width: 128, height: 128 }} />
 
@@ -143,7 +144,7 @@ export default function Footer() {
                 />
               </Stack> */}
 
-              <Stack spacing={2}>
+              <Stack spacing={2} sx={{ mt: 4 }}>
                 <Typography variant="h6">Social</Typography>
                 <Stack direction="row" alignItems="center">
                   {_socials.map((social) => (
@@ -161,7 +162,7 @@ export default function Footer() {
             </Stack>
           </Grid>
 
-          <Grid xs={12} md={6}>
+          {/* <Grid xs={12} md={6}>
             {mdUp ? (
               <Masonry
                 columns={4}
@@ -180,7 +181,7 @@ export default function Footer() {
                 ))}
               </Stack>
             )}
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
 
@@ -194,10 +195,10 @@ export default function Footer() {
           sx={{ py: 3, textAlign: "center" }}
         >
           <Typography variant="caption" sx={{ color: "text.secondary" }}>
-            © 2023. All rights reserved
+            © 2024. All rights reserved
           </Typography>
 
-          <Stack direction="row" spacing={3} justifyContent="center">
+          {/* <Stack direction="row" spacing={3} justifyContent="center">
             <Link variant="caption" sx={{ color: "text.secondary" }}>
               Help Center
             </Link>
@@ -205,13 +206,13 @@ export default function Footer() {
             <Link variant="caption" sx={{ color: "text.secondary" }}>
               Terms of Service
             </Link>
-          </Stack>
+          </Stack> */}
         </Stack>
       </Container>
     </>
   );
 
-  return <footer>{isHome ? simpleFooter : mainFooter}</footer>;
+  return <footer>{mainFooter}</footer>;
 }
 
 // ----------------------------------------------------------------------

@@ -16,7 +16,8 @@ import PricingHome from "../../pricing/home/pricing-home";
 import HomeFeatureHighlights from "../home-feature-highlights";
 import HomeFlexibleComponents from "../home-flexible-components";
 import { Box } from "@mui/material";
-import ElearningPostsView from "src/sections/_elearning/view/elearning-episodes-view";
+import PodcstEpisodesView from "src/sections/_elearning/view/podcast-episodes-view";
+import Footer from "src/layouts/main/footer";
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +28,9 @@ export default function HomeView() {
     <>
       <ScrollProgress scrollYProgress={scrollYProgress} />
 
-      <ElearningPostsView />
+      <PodcstEpisodesView />
+
+      {/* <Footer /> */}
 
       {/* <HomeHero /> */}
 

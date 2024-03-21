@@ -61,11 +61,11 @@ export default function Header({ headerOnDark }) {
         alignItems="center"
         justifyContent="flex-end"
       >
-        <Stack spacing={1} direction="row" alignItems="center">
+        {/* <Stack spacing={1} direction="row" alignItems="center">
           <Searchbar />
 
-          {/* <SettingsButton /> */}
-        </Stack>
+          <SettingsButton />
+        </Stack> */}
 
         {/* <Button
           variant="contained"

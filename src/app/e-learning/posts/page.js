@@ -1,4 +1,4 @@
-import ElearningPostsView from "src/sections/_elearning/view/elearning-episodes-view";
+import PodcstEpisodesView from "src/sections/_elearning/view/podcast-episodes-view";
 
 // ----------------------------------------------------------------------
 
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function ElearningPostsPage() {
-  return <ElearningPostsView />;
+  return <PodcstEpisodesView />;
 }
