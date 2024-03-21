@@ -77,7 +77,7 @@ export default function PostSidebar({
     },
     {
       name: "Payton Sides",
-      bio: "Payton is a member of First Baptist Church Eclectic. He usually often dedicates most of his free time to the study of theology and philosophy. Payton started this podcast because he believes the local church in general has lost the noble pursuit of the knowledge of God in place of feelings based subjective personal religion.",
+      bio: "Payton is a member of First Baptist Church Eclectic. He often dedicates most of his free time to the study of theology and philosophy. Payton started this podcast because he believes the local church in general has lost the noble pursuit of the knowledge of God in place of feelings based subjective personal religion.",
       image:
         "https://psides83.github.io/fbce-website-resources/images/payton-sides2.jpeg",
       socials: [
