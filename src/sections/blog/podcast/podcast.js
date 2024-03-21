@@ -12,7 +12,7 @@ import { Button, Stack } from "@mui/material";
 // ----------------------------------------------------------------------
 
 export default function Podcast({ episodes }) {
-  const [visibleEpisodes, setVisibleEpisodes] = useState(10);
+  const [visibleEpisodes, setVisibleEpisodes] = useState(4);
 
   function handleShowMore() {
     setVisibleEpisodes((prevVisibleEpisodes) => prevVisibleEpisodes + 10);

@@ -43,6 +43,30 @@ const StyledAppStoreButton = styled(Button)(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
+const socials = [
+  {
+    value: "facebook",
+    label: "FaceBook",
+    icon: "carbon:logo-facebook",
+    color: "#1877F2",
+    url: "",
+  },
+  {
+    value: "instagram",
+    label: "Instagram",
+    icon: "carbon:logo-instagram",
+    color: "#E02D69",
+    url: "",
+  },
+  {
+    value: "twitter",
+    label: "Twitter",
+    icon: "carbon:logo-twitter",
+    color: "#00AAEC",
+    url: "",
+  },
+];
+
 export default function Footer() {
   const mdUp = useResponsive("up", "md");
 

@@ -105,6 +105,7 @@ export default function Header({ headerOnDark }) {
             ...bgBlur({ color: theme.palette.background.default }),
             color: "text.primary",
             height: {
+              xs: HEADER.H_MOBILE - 16,
               md: HEADER.H_DESKTOP - 16,
             },
           }),
