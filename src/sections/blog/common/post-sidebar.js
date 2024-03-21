@@ -157,7 +157,7 @@ export default function PostSidebar({
 
         {/* {renderRecentPosts} */}
 
-        {renderPopularTags}
+        {/* {renderPopularTags} */}
 
         <PodcastServers podcastServers={podcastServers} />
 

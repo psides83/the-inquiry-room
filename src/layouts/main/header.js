@@ -55,19 +55,19 @@ export default function Header({ headerOnDark }) {
         <Box sx={{ flexGrow: { xs: 1, md: "unset" } }} />
       </>
 
-      <Stack
+      {/* <Stack
         spacing={2}
         direction="row"
         alignItems="center"
         justifyContent="flex-end"
-      >
-        {/* <Stack spacing={1} direction="row" alignItems="center">
+      > */}
+      {/* <Stack spacing={1} direction="row" alignItems="center">
           <Searchbar />
 
           <SettingsButton />
         </Stack> */}
 
-        {/* <Button
+      {/* <Button
           variant="contained"
           color="inherit"
           href={paths.zoneStore}
@@ -79,9 +79,9 @@ export default function Header({ headerOnDark }) {
         >
           Buy Now
         </Button> */}
-      </Stack>
+      {/* </Stack> */}
 
-      {!mdUp && <NavMobile data={navConfig} />}
+      {/* {!mdUp && <NavMobile data={navConfig} />} */}
     </>
   );
 

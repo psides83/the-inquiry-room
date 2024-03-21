@@ -53,16 +53,18 @@ export default function PodcastEpisodesView() {
         }}
       >
         <Grid container spacing={{ md: 8 }}>
-          {mdDown && (
+          {/* {mdDown && (
             <Grid xs={12} md={8}>
               <PodcastServers podcastServers={podcastServers} />
             </Grid>
-          )}
+          )} */}
 
-          <PodcastSearchMobile
-            searchText={searchText}
-            setSearchText={setSearchText}
-          />
+          <Grid xs={12} md={8}>
+            <PodcastSearchMobile
+              searchText={searchText}
+              setSearchText={setSearchText}
+            />
+          </Grid>
 
           <Grid xs={12} md={8}>
             <Podcast episodes={searchable().slice(1)} />
