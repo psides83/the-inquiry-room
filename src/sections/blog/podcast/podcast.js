@@ -7,12 +7,19 @@ import Pagination, { paginationClasses } from "@mui/material/Pagination";
 
 import PostItem from "./podcast-episode-item";
 import { useState } from "react";
+import { Button, Stack } from "@mui/material";
 
 // ----------------------------------------------------------------------
 
 export default function Podcast({ episodes }) {
+  const [visibleEpisodes, setVisibleEpisodes] = useState(10);
+
+  function handleShowMore() {
+    setVisibleEpisodes((prevVisibleEpisodes) => prevVisibleEpisodes + 10);
+  }
+
   return (
-    <>
+    <Stack alignItems="center" sx={{ mb: 4 }}>
       <Box
         sx={{
           columnGap: 4,
@@ -24,12 +31,18 @@ export default function Podcast({ episodes }) {
           },
         }}
       >
-        {episodes.slice(0, 8).map((episode) => (
+        {episodes.slice(0, visibleEpisodes).map((episode) => (
           <PostItem key={episode.pubDate} episode={episode} />
         ))}
       </Box>
 
-      <Pagination
+      {visibleEpisodes < episodes.length && (
+        <Button variant="contained" sx={{ mt: 4 }} onClick={handleShowMore}>
+          Show More
+        </Button>
+      )}
+
+      {/* <Pagination
         count={10}
         color="primary"
         sx={{
@@ -38,8 +51,8 @@ export default function Podcast({ episodes }) {
             justifyContent: "center",
           },
         }}
-      />
-    </>
+      /> */}
+    </Stack>
   );
 }
 

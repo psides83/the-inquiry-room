@@ -16,17 +16,25 @@ import { fDate } from "src/utils/format-time";
 import Image from "src/components/image";
 
 import PostTimeBlock from "../common/post-time-block";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Player from "src/components/player";
+import { Button, Collapse } from "@mui/material";
 
 // ----------------------------------------------------------------------
 
 export default function FeaturedEpisode({ episode }) {
+  const [showingDescription, setShowingDescription] = useState(false);
+
+  const handleCollapse = () => {
+    if (showingDescription) setShowingDescription(false);
+    else setShowingDescription(true);
+  };
+
   return (
     <Box
       sx={{
         bgcolor: "background.neutral",
-        py: { xs: 12, md: 14 },
+        pt: { xs: 12, md: 14 },
       }}
     >
       <Container>
@@ -37,7 +45,7 @@ export default function FeaturedEpisode({ episode }) {
           <Image
             src={episode?.coverArt}
             alt={episode?.title}
-            sx={{ height: 560, borderRadius: 2 }}
+            sx={{ height: 380, borderRadius: 2 }}
           />
 
           <Stack
@@ -65,19 +73,30 @@ export default function FeaturedEpisode({ episode }) {
 
             <Player controls url={episode?.enclosure.url} />
 
-            <Typography
-              sx={{ color: "text.secondary", flexGrow: 1 }}
-              dangerouslySetInnerHTML={{ __html: episode?.description }}
-            />
-
-            <Stack
-              direction="row"
-              alignItems="center"
-              sx={{ pt: 1.5, typography: "body2" }}
+            <Collapse
+              in={showingDescription}
+              collapsedSize={160}
+              // sx={{ mt: -3 }}
             >
-              {/* <Avatar src={episode.author.avatarUrl} sx={{ mr: 1 }} /> */}
-              {/* {episode.author.name} */}
-            </Stack>
+              <Stack alignItems="center">
+                <Box
+                  variant="body2"
+                  // persistent
+                  color="text.secondary"
+                  // sx={{ mt: -3 }}
+                  dangerouslySetInnerHTML={{ __html: episode?.description }}
+                />
+              </Stack>
+            </Collapse>
+
+            <Button
+              onClick={handleCollapse}
+              // variant="outlined"
+              size="small"
+              // sx={{ mt: 2, justifySelf: "center" }}
+            >
+              {showingDescription ? "Show less" : "Show more"}
+            </Button>
           </Stack>
         </Stack>
       </Container>

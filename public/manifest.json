@@ -1,6 +1,6 @@
 {
   "name": "The Inquiry Room",
-  "short_name": "Inquriy Room",
+  "short_name": "Inquiry Room",
   "display": "standalone",
   "start_url": "/",
   "theme_color": "#000000",

@@ -18,6 +18,7 @@ import Iconify from "src/components/iconify";
 
 import Advertisement from "../../advertisement";
 import PostItemMobile from "./post-item-mobile";
+import PodcastServers from "src/sections/_podcast/view/podcast-servers-view";
 
 // ----------------------------------------------------------------------
 
@@ -27,71 +28,74 @@ export default function PostSidebar({
   popularTags,
   recentPosts,
   advertisement,
+  podcastServers,
+  searchText,
+  setSearchText,
   sx,
   ...other
 }) {
   const mdUp = useResponsive("up", "md");
 
-  const renderAuthor = author && (
-    <Stack spacing={2} direction="row" sx={{ mb: { md: 5 } }}>
-      <Avatar src={author.avatarUrl} sx={{ width: 64, height: 64 }} />
+  // const renderAuthor = author && (
+  //   <Stack spacing={2} direction="row" sx={{ mb: { md: 5 } }}>
+  //     <Avatar src={author.avatarUrl} sx={{ width: 64, height: 64 }} />
 
-      <Stack>
-        <Typography variant="h5">{author.name}</Typography>
+  //     <Stack>
+  //       <Typography variant="h5">{author.name}</Typography>
 
-        <Typography
-          variant="body2"
-          sx={{ mt: 0.5, mb: 2, color: "text.secondary" }}
-        >
-          {author.role}
-        </Typography>
+  //       <Typography
+  //         variant="body2"
+  //         sx={{ mt: 0.5, mb: 2, color: "text.secondary" }}
+  //       >
+  //         {author.role}
+  //       </Typography>
 
-        <Stack direction="row">
-          {_socials.map((social) => (
-            <IconButton key={social.value}>
-              <Iconify icon={social.icon} sx={{ color: social.color }} />
-            </IconButton>
-          ))}
-        </Stack>
-      </Stack>
-    </Stack>
-  );
+  //       <Stack direction="row">
+  //         {_socials.map((social) => (
+  //           <IconButton key={social.value}>
+  //             <Iconify icon={social.icon} sx={{ color: social.color }} />
+  //           </IconButton>
+  //         ))}
+  //       </Stack>
+  //     </Stack>
+  //   </Stack>
+  // );
 
-  const renderCategories = categories && (
-    <Stack spacing={1}>
-      <Typography variant="h5" gutterBottom>
-        Categories
-      </Typography>
+  // const renderCategories = categories && (
+  //   <Stack spacing={1}>
+  //     <Typography variant="h5" gutterBottom>
+  //       Categories
+  //     </Typography>
 
-      {categories.map((category) => (
-        <Stack key={category.label} direction="row" alignItems="center">
-          <Box
-            sx={{
-              mr: 2,
-              width: 6,
-              height: 6,
-              borderRadius: "50%",
-              bgcolor: "primary.main",
-            }}
-          />
+  //     {categories.map((category) => (
+  //       <Stack key={category.label} direction="row" alignItems="center">
+  //         <Box
+  //           sx={{
+  //             mr: 2,
+  //             width: 6,
+  //             height: 6,
+  //             borderRadius: "50%",
+  //             bgcolor: "primary.main",
+  //           }}
+  //         />
 
-          <Link variant="body2" href={category.path} color="inherit">
-            {category.label}
-          </Link>
-        </Stack>
-      ))}
-    </Stack>
-  );
+  //         <Link variant="body2" href={category.path} color="inherit">
+  //           {category.label}
+  //         </Link>
+  //       </Stack>
+  //     ))}
+  //   </Stack>
+  // );
 
-  const renderRecentPosts = recentPosts && (
-    <Stack spacing={3}>
-      <Typography variant="h5">Recent Posts</Typography>
+  // const renderRecentPosts = recentPosts && (
+  //   <Stack spacing={3}>
+  //     <Typography variant="h5">Recent Posts</Typography>
 
-      {recentPosts.list.map((post) => (
-        <PostItemMobile key={post.id} post={post} onSiderbar />
-      ))}
-    </Stack>
-  );
+  //     {recentPosts.list.map((post) => (
+  //       <PostItemMobile key={post.id} post={post} onSiderbar />
+  //     ))}
+  //   </Stack>
+  // );
 
   const renderPopularTags = popularTags && (
     <Stack spacing={3}>
@@ -104,7 +108,9 @@ export default function PostSidebar({
             label={tag}
             variant="soft"
             size="small"
-            onClick={() => {}}
+            onClick={(e) => {
+              setSearchText(tag);
+            }}
           />
         ))}
       </Stack>
@@ -113,13 +119,17 @@ export default function PostSidebar({
 
   return (
     <>
-      {mdUp && renderAuthor}
+      {mdUp}
 
       {mdUp && (
         <TextField
           fullWidth
           hiddenLabel
           placeholder="Search..."
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -148,6 +158,8 @@ export default function PostSidebar({
         {/* {renderRecentPosts} */}
 
         {renderPopularTags}
+
+        <PodcastServers podcastServers={podcastServers} />
 
         {/* {advertisement && <Advertisement advertisement={advertisement} />} */}
       </Stack>

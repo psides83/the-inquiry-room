@@ -28,6 +28,7 @@ export default function PodcastEpisodeItem({ episode }) {
     if (showingDescription) setShowingDescription(false);
     else setShowingDescription(true);
   };
+
   return (
     <Paper variant="outlined" sx={{ borderRadius: 2, overflow: "hidden" }}>
       <Image src={episode.coverArt} alt={episode.title} ratio="1/1" />

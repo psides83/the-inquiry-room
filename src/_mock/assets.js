@@ -435,16 +435,17 @@ export const _companyNames = [
 // ----------------------------------------------------------------------
 
 export const _tags = [
+  "Jesus",
+  "The Gospel",
   "Salvation",
   "Justification",
-  "Covenant",
+  "Theology",
   "Philosophy",
+  "Covenant",
   "Assurance",
   "Heaven",
   "Hell",
-  "The Gospel",
   "Doctrine",
-  "Jesus",
 ];
 
 // ----------------------------------------------------------------------

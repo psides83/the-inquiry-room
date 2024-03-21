@@ -1,4 +1,4 @@
-import PodcstEpisodesView from "src/sections/_podcast/view/podcast-episodes-view";
+import PodcastEpisodesView from "src/sections/_podcast/view/podcast-episodes-view";
 
 // ----------------------------------------------------------------------
 
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function PodcastEpisodesPage() {
-  return <PodcstEpisodesView />;
+  return <PodcastEpisodesView />;
 }

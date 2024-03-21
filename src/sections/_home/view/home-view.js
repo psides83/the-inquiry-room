@@ -4,7 +4,7 @@ import { useScroll } from "framer-motion";
 
 import ScrollProgress from "src/components/scroll-progress";
 
-import PodcstEpisodesView from "src/sections/_podcast/view/podcast-episodes-view";
+import PodcastEpisodesView from "src/sections/_podcast/view/podcast-episodes-view";
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ export default function HomeView() {
     <>
       <ScrollProgress scrollYProgress={scrollYProgress} />
 
-      <PodcstEpisodesView />
+      <PodcastEpisodesView />
     </>
   );
 }
