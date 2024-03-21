@@ -45,7 +45,7 @@ export default function FeaturedEpisode({ episode }) {
           <Image
             src={episode?.coverArt}
             alt={episode?.title}
-            sx={{ height: 380, borderRadius: 2 }}
+            sx={{ height: 380, width: 380, borderRadius: 2 }}
           />
 
           <Stack
