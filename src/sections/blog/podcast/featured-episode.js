@@ -54,7 +54,7 @@ export default function FeaturedEpisode({ episode }) {
               mx: "auto",
               pl: { md: 8 },
               py: { xs: 3, md: 5 },
-              maxWidth: { md: 408 },
+              maxWidth: { xs: 300, md: 408 },
             }}
           >
             <PostTimeBlock
@@ -78,15 +78,15 @@ export default function FeaturedEpisode({ episode }) {
               collapsedSize={160}
               // sx={{ mt: -3 }}
             >
-              <Stack alignItems="center">
-                <Box
-                  variant="body2"
-                  // persistent
-                  color="text.secondary"
-                  // sx={{ mt: -3 }}
-                  dangerouslySetInnerHTML={{ __html: episode?.description }}
-                />
-              </Stack>
+              {/* <Stack alignItems="center"> */}
+              <Box
+                variant="body2"
+                // persistent
+                color="text.secondary"
+                // sx={{ mt: -3 }}
+                dangerouslySetInnerHTML={{ __html: episode?.description }}
+              />
+              {/* </Stack> */}
             </Collapse>
 
             <Button
