@@ -41,7 +41,7 @@ export default function PostSidebar({
   const authors = [
     {
       name: "Jeremy Brown",
-      bio: "Jeremy holds a Master's of Divinity at Beeson Divinity School. He is a staff pastor at First Baptist Church in Eclectic, AL where he oversee ministry to families. Jeremy is passionate about equipping the the church through prayer, preaching, and family discipleship.",
+      bio: "Jeremy holds a Master's of Divinity at Beeson Divinity School. He serves as pastor at Mignon Baptist Church in Sylacauga, AL. Jeremy is passionate about equipping the the church through prayer, preaching, and family discipleship.",
       image:
         "https://psides83.github.io/fbce-website-resources/images/jeremy-brown.jpg",
       socials: [
